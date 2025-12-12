@@ -309,6 +309,26 @@ void mostrarProceso(Procesos p, int memoriaAsignada) {
     cout << "[" << p.getId() << "," << p.getTam() << ",(" << memoriaAsignada << ")," << p.getCuanto() << "]";
 }
 
+char leeTeclaSimple()
+{
+    char c;
+    do {
+        c = static_cast<char>(toupper(_getch()));
+    } while (c != 'A' && c != 'D' && c != 'S');
+    return c;
+}
+
+int control_velocidad(int velActual, char tecla)
+{
+    if (tecla == 'A') {          // aumentar
+        velActual -= 1000;
+        if (velActual < 1) velActual = 1;
+    } else if (tecla == 'D') {   // disminuir
+        velActual += 1000;
+    }
+    return velActual;
+}
+
 int control_velocidad(int velActual) {
     char ch = _getch();
     
