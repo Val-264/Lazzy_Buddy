@@ -447,7 +447,7 @@ void implementar_Buddy() {
     cout << "Procesos totales generados: " << procesosGenerados << endl;
     cout << "Procesos atendidos completamente: " << procesosAtendidos << endl;
     cout << "(Presiona Enter para continuar...)" << endl;
-    cin.ignore(); cin.get();
+    cin.get();
 }
 
 /* ---------------- Lazy Buddy System -------------- */
@@ -469,7 +469,7 @@ void implementar_Lazy() {
         cout << "\n\n================================================\n";
         cout << "        CICLO " << ciclo << " LAZY BUDDY SYSTEM";
         cout << "\n================================================\n\n";
-        cout << "VELOCIDAD: " << velocidad << "\n\n";
+        cout << "VELOCIDAD: " << velocidad/1000 << " segundos\n\n";
 
         if (colaEspera.empty()) {
             Procesos p = generarProceso();
@@ -569,6 +569,5 @@ void implementar_Lazy() {
     cout << "Procesos totales generados: " << procesosGenerados << endl;
     cout << "Procesos atendidos completamente: " << procesosAtendidos << endl;
     cout << "(Presiona Enter para continuar...)" << endl;
-    cin.ignore(); 
     cin.get();
 }
