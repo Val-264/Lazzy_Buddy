@@ -310,6 +310,8 @@ void mostrarProceso(Procesos p, int memoriaAsignada) {
 }
 
 int control_velocidad(int velActual) {
+    char ch = _getch();
+    
     char tecla = _getch();
     if (tecla == 72) {          // flecha arriba
         velActual -= 1000;
