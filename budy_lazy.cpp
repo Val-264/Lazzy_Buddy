@@ -108,7 +108,7 @@ Procesos generarProceso();
 void mostrarProceso(Procesos p);
 void mostrarProceso(Procesos p, int memoriaAsignada);
 void mostrarMemoria();
-int control_velocidad(int velActual);
+int control_velocidad(int velActual, char tecla);
 bool asignarBuddy(Procesos p);
 int calcularMemoriaOcupada();
 void procesarCiclo();
@@ -318,25 +318,12 @@ char leeTeclaSimple()
     return c;
 }
 
-int control_velocidad(int velActual, char tecla)
-{
+
+int control_velocidad(int velActual, char tecla) {
     if (tecla == 'A') {          // aumentar
         velActual -= 1000;
         if (velActual < 1) velActual = 1;
     } else if (tecla == 'D') {   // disminuir
-        velActual += 1000;
-    }
-    return velActual;
-}
-
-int control_velocidad(int velActual) {
-    char ch = _getch();
-    
-    char tecla = _getch();
-    if (tecla == 72) {          // flecha arriba
-        velActual -= 1000;
-        if (velActual <= 0) velActual = 1;
-    } else if (tecla == 80) {   // flecha abajo
         velActual += 1000;
     }
     return velActual;
@@ -352,9 +339,9 @@ void implementar_Buddy() {
 
     while (true) {
         if (_kbhit()) {
-            char tecla = _getch();
-            if (tecla == 27) break;              // Esc
-            else if (tecla == -32 || tecla == 0) velocidad = control_velocidad(velocidad);
+            char tecla = leeTeclaSimple();
+            if (tecla == 'S') break;           // Salir 
+            else velocidad = control_velocidad(velocidad, tecla);
         }
 
         ciclo++;
@@ -473,9 +460,9 @@ void implementar_Lazy() {
 
     while (true) {
         if (_kbhit()) {
-            char tecla = _getch();
-            if (tecla == 27) break;
-            else if (tecla == -32 || tecla == 0) velocidad = control_velocidad(velocidad);
+            char tecla = leeTeclaSimple();
+            if (tecla == 'S') break;           // Salir 
+            else velocidad = control_velocidad(velocidad, tecla);
         }
 
         ciclo++;
