@@ -200,7 +200,7 @@ void configurarParametros() {
          << "\n2- DISMINUIR LA VELOCIDAD presionando la tecla 'D';"
          << "\n3- TERMINAR LA SIMULACION presionando la tecla 'S'.\n\n";
     cout << "(Presiona Enter para continuar...)" << endl;
-    cin.get();
+    cin.ignore(); cin.get();
 }
 
 void mostrarMemoria() {
