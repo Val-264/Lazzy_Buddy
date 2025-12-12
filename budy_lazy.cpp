@@ -314,7 +314,8 @@ char leeTeclaSimple()
     char c;
     do {
         c = static_cast<char>(toupper(_getch()));
-    } while (c != 'A' && c != 'D' && c != 'S');
+        if (c != 'A' && c != 'D' && c != 'S') c = 'N';
+    } while (c != 'A' && c != 'D' && c != 'S' && c != 'N');
     return c;
 }
 
@@ -341,6 +342,7 @@ void implementar_Buddy() {
         if (_kbhit()) {
             char tecla = leeTeclaSimple();
             if (tecla == 'S') break;           // Salir 
+            else if (tecla == 'N') cout << "";
             else velocidad = control_velocidad(velocidad, tecla);
         }
 
@@ -462,6 +464,7 @@ void implementar_Lazy() {
         if (_kbhit()) {
             char tecla = leeTeclaSimple();
             if (tecla == 'S') break;           // Salir 
+            else if (tecla == 'N') cout << "";
             else velocidad = control_velocidad(velocidad, tecla);
         }
 
