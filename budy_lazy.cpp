@@ -196,11 +196,11 @@ void configurarParametros() {
     idProceso = 1;
 
     cout << "\nDurante la simulacion puedes:"
-         << "\n1- AUMENTAR LA VELOCIDAD presionando la tecla de flecha hacia arriba;"
-         << "\n2- DISMINUIR LA VELOCIDAD presionando la tecla de flecha hacia abajo;"
-         << "\n3- TERMINAR LA SIMULACION presionando la tecla Esc.\n\n";
+         << "\n1- AUMENTAR LA VELOCIDAD presionando la 'A';"
+         << "\n2- DISMINUIR LA VELOCIDAD presionando la tecla 'D';"
+         << "\n3- TERMINAR LA SIMULACION presionando la tecla 'S'.\n\n";
     cout << "(Presiona Enter para continuar...)" << endl;
-    cin.ignore(); cin.get();
+    cin.get();
 }
 
 void mostrarMemoria() {
