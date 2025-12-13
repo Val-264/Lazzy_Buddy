@@ -400,8 +400,6 @@ void configurarParametros() {
     } while (tamMemoria != 1 && tamMemoria != 4 && tamMemoria != 8);
     
     tamMemoria *= 1024;
-    cuantoSistema = 3;
-    tamMaxCuanto = 10;
 
     if (tamMemoria == 1024) maxPermitido = 64;
     else if (tamMemoria == 4096) maxPermitido = 128;
@@ -421,6 +419,37 @@ void configurarParametros() {
             tamMaxMemoProces = static_cast<int>(tamProces);
         }
     } while (tamMaxMemoProces < 32 || tamMaxMemoProces > tamMemoria || tamMaxMemoProces > maxPermitido);
+
+    float cuantProces = 0;
+    do {
+        cout << "  Cuanto del proceso: ";
+        cin >> cuantProces;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            tamMaxCuanto = 0;
+        } else if (fmod(cuantProces, 1) != 0) {
+            tamMaxCuanto= 0;
+        } else {
+            tamMaxCuanto = static_cast<int>(cuantProces);
+        }
+    } while (tamMaxCuanto  <= 0);
+
+
+    float cuantSist = 0;
+    do {
+        cout << "  Cuanto del sistema: ";
+        cin >> cuantSist;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cuantoSistema = 0;
+        } else if (fmod(cuantSist, 1) != 0) {
+            cuantoSistema = 0;
+        } else {
+            cuantoSistema = static_cast<int>(cuantSist);
+        }
+    } while (cuantoSistema  <= 0);
 
     cout << endl;
     animacionCarga("Aplicando configuracion", 400);
