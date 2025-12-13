@@ -636,7 +636,6 @@ void implementar_Buddy() {
         }
 
         ciclo++;
-        limpiarPantalla();
         
         cout << endl;
         cout << CYAN;
@@ -771,7 +770,6 @@ void implementar_Buddy() {
     }
     
     cout << endl << "  Presiona Enter para continuar...";
-    cin.ignore(); 
     cin.get();
 }
 
@@ -800,7 +798,6 @@ void implementar_Lazy() {
         }
 
         ciclo++;
-        limpiarPantalla();
         
         cout << endl;
         cout << CYAN;
@@ -936,6 +933,5 @@ void implementar_Lazy() {
     }
     
     cout << endl << "  Presiona Enter para continuar...";
-    cin.ignore(); 
     cin.get();
 }
